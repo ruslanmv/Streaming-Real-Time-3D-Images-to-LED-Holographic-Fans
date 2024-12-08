@@ -39,6 +39,19 @@ Before starting, make sure you have the following:
 ---
 
 ## **Pipeline Overview**
+```mermaid
+graph TD
+    A[Start Streaming] --> B[Generate 3D Frame]
+    B --> C[Validate Frame Dimensions]
+    C --> D[Convert Frame to Compatible Format]
+    D --> E[Send Frame to Fan API]
+    E --> F[Display Frame on LED Fan]
+    F --> G[Increment Frame Angle]
+    G --> H[Loop for Next Frame]
+    H --> B
+    H --> I[Stop Streaming User Interrupt]
+```
+
 
 This project involves the following components:
 
